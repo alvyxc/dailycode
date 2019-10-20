@@ -10,3 +10,25 @@
 #         return f(a, b)
 #     return pair
 # Implement car and cdr.
+
+
+def cons(a, b):
+    def pair(f):
+        return f(a, b)
+    return pair
+
+
+def car(p):
+    def get_first(a, b):
+        return a
+    return p(get_first)
+
+
+def cdr(p):
+    def get_second(a, b):
+        return b
+    return p(get_second)
+
+
+print(car(cons(3, 4)))
+print(cdr(cons(3, 4)))
